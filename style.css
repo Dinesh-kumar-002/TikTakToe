@@ -1,0 +1,71 @@
+.container{
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.score{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.square{
+    margin: 20px 0;
+    /* background-color: rgb(74, 74, 74); */
+    height: 250px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+}
+.squares{
+    background-color: rgb(135, 135, 135);
+    height: 83px;
+    width: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-family: 'permanent marker',cursive;
+    font-size: 50px;
+    cursor: pointer;
+}
+.poi{
+    margin-top: -5px;
+}
+.reset{
+    padding: 10px 0;
+    letter-spacing: 3px;
+    background-color: rgb(184, 184, 184);
+    border: 0;
+}
+.reset:hover{
+    background-color: rgb(32, 32, 32);
+    color: white;
+    
+}
+.rounds,.points{
+    letter-spacing: 3px;
+    margin:2px;
+}
+.point{
+    display: flex;
+    flex-direction: column;
+}
+.result,.turn{
+    border: 1px solid black;
+    height:40px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+}
