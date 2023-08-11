@@ -101,7 +101,7 @@ function winning(player){
         if(rounds.textContent=='4'){
             if(Xpoint>Opoint){
                 square.innerHTML=`<img src="images/won.jpg" class="wonImage">
-                <h2 class="wontext">X wins final</h2>
+                <h3 class="wontext">X wins final</h3>
                 <h2 class="wonPoint">Points : ${Xpoint}</h2> `;
                 result.textContent=`X is the Winner`;
                 reset.textContent='RESET'
@@ -113,7 +113,7 @@ function winning(player){
             }
             else if(Opoint>Xpoint){
                 square.innerHTML=`<img src="images/won.jpg" class="wonImage">
-                <h2 class="wontext">O wins final</h2>
+                <h4 class="wontext">O wins final</h4>
                 <h2 class="wonPoint">Points : ${Opoint}</h2> `;
                 result.textContent=`O is the Winner`;
                 reset.textContent='RESET';
