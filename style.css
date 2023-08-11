@@ -66,7 +66,7 @@ body{
     grid-template-columns: auto auto auto;
 }
 .squares{
-    background-color: rgb(0, 35, 44);
+    background-color: rgb(0, 94, 117);
     height: 83px;
     width: 83px;
     display: flex;
