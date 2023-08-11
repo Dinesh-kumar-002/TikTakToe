@@ -33,7 +33,7 @@ body{
     justify-content: space-between;
 }
 .wontext{
-    color: white;
+    color: rgb(1,45,57);
     position: absolute;
     top: 5px;
     left: 50%;
@@ -47,13 +47,12 @@ body{
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: rgb(1,45,57);
 }
 .wonImage{
     position: absolute;
     height: 100%;
     width: 100%;
-    color: white;
 }
 .square{
     
