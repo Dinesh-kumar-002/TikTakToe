@@ -7,9 +7,7 @@ var result=document.querySelector('.result');
 var turn=document.querySelector('.turn');
 var reset=document.querySelector('.reset');
 var eachwon=false;
-reset.addEventListener('click', ()=>{
-    eachwon=false;
-})
+
 var winningConditions=[
     [0,1,2],
     [3,4,5],
@@ -70,9 +68,9 @@ function winning(player){
     var won=false;
     for(let i=0;i<winningConditions.length;i++){
         const conditionCheck= winningConditions[i];
-        const a=emptyArray[conditionCheck[0]]
-        const b=emptyArray[conditionCheck[1]]
-        const c=emptyArray[conditionCheck[2]]
+        const a=emptyArray[conditionCheck[0]];
+        const b=emptyArray[conditionCheck[1]];
+        const c=emptyArray[conditionCheck[2]];
         if(a=='' || b=='' || c==''){
             continue;
         }
@@ -102,9 +100,9 @@ function winning(player){
 
         if(rounds.textContent=='4'){
             if(Xpoint>Opoint){
-                square.innerHTML=`<h2>X is winner with ${Xpoint} pts</h2>
-                `
-                square.innerHTML+=``;
+                square.innerHTML=`<img src="images/won.jpg" class="wonImage">
+                <h2 class="wontext">X wins final</h2>
+                <h2 class="wonPoint">Points : ${Xpoint}</h2> `;
                 result.textContent=`X is the Winner`;
                 reset.textContent='RESET'
                 turn.textContent=(player=="X")? "O ' s turn":"X ' s turn";
@@ -114,7 +112,9 @@ function winning(player){
                 
             }
             else if(Opoint>Xpoint){
-                square.innerHTML="O is winner"
+                square.innerHTML=`<img src="images/won.jpg" class="wonImage">
+                <h2 class="wontext">O wins final</h2>
+                <h2 class="wonPoint">Points : ${Opoint}</h2> `;
                 result.textContent=`O is the Winner`;
                 reset.textContent='RESET';
                 setTimeout(() => {
@@ -123,15 +123,22 @@ function winning(player){
                 
             }
             else if((Opoint==0 && Xpoint==0)){
-                result.textContent=`DRAW`;
-                reset.textContent='RESET'
+                // result.textContent=`DRAW`;
+                // reset.textContent='RESET';
+                square.innerHTML=`<img src="images/oops.jpg" class="wonImage">
+                <h2 class="wontext">No one wins</h2>`;
+                result.textContent=`No one wins`;
+                reset.textContent='RESET';
+                setTimeout(() => {
+                    resetting2();
+                }, 1000);
                 
             }
             
         }
         
     }
-    else if(!emptyArray.includes('')){
+    else if(!emptyArray.includes('') && !won){
         emptyArray=["","","","","","","","",""];
         squares.forEach((box) => {
             box.textContent='';
@@ -148,8 +155,9 @@ reset.addEventListener('click', ()=>{
     resetting();
 })
 function resetting(){
+    eachwon=false;
     player="X";
-     turn.textContent=`${player} 's turn`;
+    turn.textContent=`${player} 's turn`;
     squares.forEach((box) => {
         box.textContent='';
     })
@@ -159,6 +167,7 @@ function resetting(){
     
 }
 function resetting2(){
+    eachwon=false;
     squares.forEach((box) => {
         box.textContent='';
     })
